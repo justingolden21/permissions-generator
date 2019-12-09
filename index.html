@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Permissions Text Generator</title>
+
+<meta charset="utf-8">
+<meta name="title=" content="Permissions Text Generator">
+<meta name="robots" content="index, follow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="generate text for permissions in linux">
+<meta name="keywords" content="permissions, generate, generator, text">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="styles.css">
+<script src="scripts.js"></script>
+
+</head>
+
+<body>
+<div class="text-center container">
+	<br>
+	<h3>Permissions Text Generator</h3>
+	<label for="target-select">Target</label>
+	<select id="target-select" class="form-control">
+		<option value="-">File (-)</option>
+		<option value="d">Directory (d)</option>
+		<option value="l">Symbolic Link (l)</option>
+		<option value="b">Block Special File (b)</option>
+		<option value="c">Character Special File (c)</option>
+		<option value="p">Named Pipe Special File (p)</option>
+		<option value="s">Local Socket Special File (s)</option>
+	</select>
+
+	<label>Owner: </label>
+	<div class="form-check form-check-inline">
+		<input class="form-check-input" type="checkbox" id="owner-read-check">
+		<label class="form-check-label" for="owner-read-check">read</label>
+	</div>
+	<div class="form-check form-check-inline">
+		<input class="form-check-input" type="checkbox" id="owner-write-check">
+		<label class="form-check-label" for="owner-write-check">write</label>
+	</div>
+	<div class="form-check form-check-inline">
+		<input class="form-check-input" type="checkbox" id="owner-execute-check">
+		<label class="form-check-label" for="owner-execute-check">execute</label>
+	</div>
+	<br>
+	<label>Group: </label>
+	<div class="form-check form-check-inline">
+		<input class="form-check-input" type="checkbox" id="group-read-check">
+		<label class="form-check-label" for="group-read-check">read</label>
+	</div>
+	<div class="form-check form-check-inline">
+		<input class="form-check-input" type="checkbox" id="group-write-check">
+		<label class="form-check-label" for="group-write-check">write</label>
+	</div>
+	<div class="form-check form-check-inline">
+		<input class="form-check-input" type="checkbox" id="group-execute-check">
+		<label class="form-check-label" for="group-execute-check">execute</label>
+	</div>
+	<br>
+	<label>Others: </label>
+	<div class="form-check form-check-inline">
+		<input class="form-check-input" type="checkbox" id="others-read-check">
+		<label class="form-check-label" for="others-read-check">read</label>
+	</div>
+	<div class="form-check form-check-inline">
+		<input class="form-check-input" type="checkbox" id="others-write-check">
+		<label class="form-check-label" for="others-write-check">write</label>
+	</div>
+	<div class="form-check form-check-inline">
+		<input class="form-check-input" type="checkbox" id="others-execute-check">
+		<label class="form-check-label" for="others-execute-check">execute</label>
+	</div>
+
+	<br>
+	<button class="btn" onclick="makeAnswer()">Generate Text</button>
+	<br><br>
+
+	<input id="output" class="form-control" type="text" onclick="this.select()">
+
+</div>
+
+</body>
+</html>
